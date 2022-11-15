@@ -35,9 +35,13 @@ namespace Home_work_attribute_Citizen
 
         public void CreateCitezen()
         {
+            //
             Citezen citezen = new Citezen(Name, BirthDate, Phone, Passportе, Address);
+            //Список объектов валидации
             var result = new List<ValidationResult>();
+            //Создаем контекст валидации
             var context = new ValidationContext(citezen);
+
 
             if(!Validator.TryValidateObject(citezen, context, result, true))
             {
